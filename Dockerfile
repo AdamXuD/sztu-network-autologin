@@ -1,13 +1,31 @@
-FROM python:3.11.6-alpine
+FROM golang:alpine AS builder
+
+LABEL stage=gobuilder
+
+ENV CGO_ENABLED 0
+
+ENV GOOS linux
+
+ENV GOPROXY https://goproxy.cn,direct
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY . .
 
-RUN pip install -r requirements.txt
+RUN go mod download
 
-COPY main.py main.py
+RUN go build -ldflags="-s -w" -o /app/main /app/main.go
 
-ENV TZ=Asia/Shanghai
+FROM alpine
 
-CMD ["python", "-u", "main.py"]
+RUN apk update --no-cache && apk add --no-cache ca-certificates tzdata
+
+ENV TZ Asia/Shanghai
+
+WORKDIR /app
+
+COPY --from=builder /app/main /app/main
+
+COPY --from=builder /app/.env /app/.env
+
+CMD ["./main"]
