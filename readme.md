@@ -3,6 +3,8 @@
 > 为了解决 SZTU 宿舍的校园网络无法使用路由器 PPPoE 自动登录、长时间无流量或超时会自动掉线的问题而抓包设计的 Python 脚本。
 > ~~这网络确实有点溺智~~
 
+> 点此查看[支持单文件部署的 Golang 分支](https://github.com/AdamXuD/sztu-network-autologin/tree/golang)
+
 ## 功能特点
 
 - 自动登录
