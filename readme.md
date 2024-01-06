@@ -4,6 +4,7 @@
 > ~~这网络确实有点溺智~~
 
 > 点此查看[支持单文件部署的 Golang 分支](https://github.com/AdamXuD/sztu-network-autologin/tree/golang)
+> 240106 golang 版本有点毛病 待修复
 
 ## 功能特点
 
