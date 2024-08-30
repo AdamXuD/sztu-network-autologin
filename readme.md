@@ -1,5 +1,7 @@
 # SZTU 宿舍网络自动登录脚本
 
+> 杀软学校换成了深澜系统，就是不提供PPPoe登陆，故该脚本已deprecated，新脚本请[参考](https://github.com/AdamXuD/Sztu-srun-login-script)
+
 > 为了解决 SZTU 宿舍的校园网络无法使用路由器 PPPoE 自动登录、长时间无流量或超时会自动掉线的问题而抓包设计的 Python 脚本。
 > ~~这网络确实有点溺智~~
 
